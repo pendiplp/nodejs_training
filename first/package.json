@@ -1,0 +1,11 @@
+{
+  "name": "node_first",
+  "version": "1.0.0",
+  "description": "first experience with node js",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "author": "fendy kharisma",
+  "license": "ISC"
+}
