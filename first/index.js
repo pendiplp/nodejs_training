@@ -16,10 +16,12 @@ http.createServer(function(req, res) {
 			var html = '';
 			var len = url.parse(href, true).query['jumlah'];
 			var length = (len>2?len:2);
+			var ht = ("<!DOCTYPE html><html><head><title></title><style></style></head><body><pre>");
 			for(var i=1;i<=length;i++){
-				html+="face"+i+": "+cool()+"\n";
+				html+=i+"\t: "+cool()+"\n\n";
 			}
-			href+="\n"+html;
+			html=ht+html;
+			//href+="\n"+html;
 			break;
 		default:
 			var path = ('../../me/lat/cv/');
@@ -30,12 +32,14 @@ http.createServer(function(req, res) {
 				res.end();
 				html = null;
  			});
+ 			console.log('default')
+ 			break;
 	}
 	if(html!=null){
 		res.write(html);
 		res.end();
 	}
-	console.log(href);
+	console.log("url: http://localhost:3000/"+href);
 }).listen(3000);
 
 console.log("Server is listening");
